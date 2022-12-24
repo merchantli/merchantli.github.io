@@ -59,6 +59,7 @@
       grid-template-areas: ". tree-top ."". tree-middle ."". tree-bottom ."". tree-stem .";
       grid-template-columns: 100px auto 100px;
       transform: rotateY(50deg) scaley(1.5);
+      z-index: 2;
     }
 
     .tree>li {
@@ -875,6 +876,7 @@
       grid-template-rows: repeat(12, 20px);
       left: calc(50% - 100px);
       top: calc(50% - 135px);
+      z-index: 2;
     }
 
     .toys .star {
@@ -1489,15 +1491,15 @@
       <li class="light l24"></li>
       <li class="light l25"></li>
     </ul>
-    <audio id="audio" style="display: none;">
+    <audio id="audio" controls style="display: none;">
       您的浏览器不支持 audio 元素。
-      <source src="./Jingle Bells.mp3" type="audio/mpeg">
+      <source src="./Jingle Bells.mp3">
     </audio>
     <canvas id="snow"></canvas>
 </body>
 <script>
   const video = document.querySelector('#audio')
-  const sphere = document.querySelector('.sphere')
+  const thirds = document.querySelector('.thirds')
   function playAudio() {
     if (video.paused) {
       video.play()
@@ -1505,7 +1507,7 @@
       video.pause()
     }
   }
-  sphere.addEventListener('click', playAudio)
+  thirds.addEventListener('click', playAudio)
 </script>
 
 </html>
